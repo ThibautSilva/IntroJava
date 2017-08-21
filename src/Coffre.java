@@ -1,31 +1,96 @@
-abstract class Coffre {
-    public double prixJour;
-    public int client;
-    public int agence;
+package com.company;
 
-    public double getPrixJour() {
-        return prixJour;
+
+public class Coffre {
+
+    private int IdCoffre;
+    private String TypeCoffre;
+    private String Periode;
+    private int Prix;
+    private String Devise;
+    private Client Client;
+
+
+    // Constructeur
+    public Coffre(String pIdCoffre, String pTypeCoffre, String pPeriode, int pPrix, String pDevise, Client pClient)
+    {
+        System.out.println("Création d'un coffre !");
+        TypeCoffre = pIdCoffre;
+        TypeCoffre = pTypeCoffre;
+        Periode = pPeriode;
+        Prix = pPrix;
+        Devise = pDevise;
+        Client = pClient;
     }
 
-    public void setPrixJour(double prixJour) {
-        this.prixJour = prixJour;
+    //*************   GETTERS *************
+
+
+    //Retourne le type de coffre
+    public String getTypeCoffre()  {
+        return TypeCoffre;
     }
 
-    public int getClient() {
-        return client;
+    //Retourne la periode
+    public String getPeriode()
+    {
+        return Periode;
     }
 
-    public void setClient(int client) {
-        this.client = client;
+    // Retourne le prix
+    public int getPrix()
+    {
+        return Prix;
     }
 
-    public int getAgence() {
-        return agence;
+    // Retourne la devise
+    public String getDevise()
+    {
+        return Devise;
+
     }
 
-    public void setAgence(int agence) {
-        this.agence = agence;
+    // Retourne le client associé au coffre
+    public Client getClient()
+    {
+        return Client;
+
     }
 
-    abstract double calculFrais();
+
+
+
+    //*************   SETTER   *************
+
+    //Définit le type du coffre
+    public void setTypeCoffre(String pTypeCoffre)
+    {
+        this.TypeCoffre = pTypeCoffre;
+    }
+
+    //Définit la periode
+    public void setPeriode (String pPeriode)
+    {
+        this.Periode = pPeriode;
+    }
+
+    //Définit le prix
+    public void setPrix(int pPrix)
+    {
+        this.Prix = pPrix;
+    }
+
+    //Définit le devise
+    public void setDevise(String pDevise)
+    {
+        this.Devise = pDevise;
+    }
+
+    //Définit le client du coffre
+    public void setClientCoffre(Client pClient)
+    {
+        this.Client = pClient;
+    }
+
+
 }
