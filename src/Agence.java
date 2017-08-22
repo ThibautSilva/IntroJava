@@ -56,5 +56,15 @@ public class Agence {
         coffres.add(c);
     }
 
+    public void displayAgence(){
+        System.out.println("--------------------");
+        System.out.println("Agence: " + this.nom);
+        System.out.println("Ville: " + this.ville);
+        System.out.println("CP: " + this.codePostale);
+        System.out.println("Sucurcale de: " + sucursale.getNom());
+        System.out.println("Centre de: " + sucursale.getCentre().getNom());
+        System.out.println("--------------------");
+
+    }
 
 }
