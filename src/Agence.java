@@ -49,12 +49,23 @@ public class Agence {
         return coffres;
     }
 
+    //Ajoute ou remplace le coffre si il existe;
+    public void addCoffre(Coffre c){
+        boolean coffreExiste = false;
+        for (int i = 0; i < coffres.size(); i++) {
+            if(coffres.get(i).getIdCOffre() == c.getIdCOffre()){
+                coffres.set(i,c);
+                coffreExiste = true;
+            }
+        }
+        if(!coffreExiste)   {
+            coffres.add(c);
+        }
+    }
     public void addClient(Client c){
         clients.add(c);
     }
-    public void addCoffre(Coffre c){
-        coffres.add(c);
-    }
+
 
 
 }
