@@ -1,3 +1,4 @@
+import java.util.List;
 /**
  * Created by jeffreydomenge on 21/08/2017.
  */
@@ -6,14 +7,8 @@ public class Agence {
     private  String codePostale;
     private  String ville;
     private  Sucursale sucursale;
-
-    public List<Client> getAllClientsFromAgence(){
-        return new List<Client>();
-    }
-
-    public List<Coffre> getAllCoffreAgence(){
-        return new List<Coffre>();
-    }
+    private List<Client> clients;
+    private List<Coffre> coffres;
 
     public Agence(Sucursale sucursale ){
         this.sucursale = sucursale;
@@ -42,5 +37,21 @@ public class Agence {
     public String getNom(){
         return this.nom;
     }
+
+    public List<Client> getAllClientsFromAgence(){
+        return clients;
+    }
+
+    public List<Coffre> getAllCoffreAgence(){
+        return coffres;
+    }
+
+    public void addClient(Client c){
+        clients.add(c);
+    }
+    public void addCoffre(Coffre c){
+        clients.add(c);
+    }
+
 
 }
