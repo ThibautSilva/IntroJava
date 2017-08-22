@@ -50,7 +50,6 @@ public class Operation {
 
     public void setId(String id) {
         this.id = id;
-        this.updateDate = new Date();
     }
 
     public int getPeriodeLocation() {
@@ -59,7 +58,6 @@ public class Operation {
 
     public void setPeriodeLocation(int periodeLocation) {
         this.periodeLocation = periodeLocation;
-        this.updateDate = new Date();
     }
 
     public String getDevise() {
@@ -68,7 +66,6 @@ public class Operation {
 
     public void setDevise(String devise) {
         this.devise = devise;
-        this.updateDate = new Date();
     }
 
     public Coffre getCoffre() {
@@ -77,7 +74,6 @@ public class Operation {
 
     public void setCoffre(Coffre coffre) {
         this.coffre = coffre;
-        this.updateDate = new Date();
     }
 
     public Double getPrixPeriode() {
@@ -86,7 +82,6 @@ public class Operation {
 
     public void setPrixPeriode(Double prixPeriode) {
         this.prixPeriode = prixPeriode;
-        this.updateDate = new Date();
     }
 
     public Frais getFraisDeGarde() {
@@ -95,7 +90,6 @@ public class Operation {
 
     public void setFraisDeGarde(Frais fraisDeGarde) {
         this.fraisDeGarde = fraisDeGarde;
-        this.updateDate = new Date();
     }
 
     public Client getClient() {
@@ -104,15 +98,21 @@ public class Operation {
 
     public void setClient(Client client) {
         this.client = client;
-        this.updateDate = new Date();
     }
 
-    public Date getCreateDate() {
+    public Instant getCreateDate() {
         return createDate;
     }
 
-    public Date getUpdateDate() {
+    public void setCreateDate(Instant createDate) {
+        this.createDate = createDate;
+    }
+
+    public Instant getUpdateDate() {
         return updateDate;
     }
 
+    public void setUpdateDate(Instant updateDate) {
+        this.updateDate = updateDate;
+    }
 }

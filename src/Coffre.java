@@ -1,96 +1,88 @@
-package com.company;
-
-
 public class Coffre {
 
-    private int IdCoffre;
-    private String TypeCoffre;
-    private String Periode;
-    private int Prix;
-    private String Devise;
-    private Client Client;
+    private int idCoffre;
+    private String typeCoffre;
+    private String periode;
+    private int prix;
+    private String devise;
+    private int idClient;
 
 
     // Constructeur
-    public Coffre(String pIdCoffre, String pTypeCoffre, String pPeriode, int pPrix, String pDevise, Client pClient)
-    {
+    public Coffre(int pIdCoffre, String pTypeCoffre, String pPeriode, int pPrix, String pDevise, int pClient) {
         System.out.println("Création d'un coffre !");
-        TypeCoffre = pIdCoffre;
-        TypeCoffre = pTypeCoffre;
-        Periode = pPeriode;
-        Prix = pPrix;
-        Devise = pDevise;
-        Client = pClient;
+        idCoffre = pIdCoffre;
+        typeCoffre = pTypeCoffre;
+        periode = pPeriode;
+        prix = pPrix;
+        devise = pDevise;
+        idClient = pClient;
     }
 
     //*************   GETTERS *************
 
+    //Retourne le type de coffre
+    public int getIdCOffre() {
+        return idCoffre;
+    }
 
     //Retourne le type de coffre
-    public String getTypeCoffre()  {
-        return TypeCoffre;
+    public String getTypeCoffre() {
+        return typeCoffre;
     }
 
     //Retourne la periode
-    public String getPeriode()
-    {
-        return Periode;
+    public String getPeriode() {
+        return periode;
     }
 
     // Retourne le prix
-    public int getPrix()
-    {
-        return Prix;
+    public int getPrix() {
+        return prix;
     }
 
     // Retourne la devise
-    public String getDevise()
-    {
-        return Devise;
-
+    public String getDevise() {
+        return devise;
     }
 
     // Retourne le client associé au coffre
-    public Client getClient()
-    {
-        return Client;
+    public int getClient() {
+        return idClient;
 
     }
-
-
-
 
     //*************   SETTER   *************
 
     //Définit le type du coffre
-    public void setTypeCoffre(String pTypeCoffre)
-    {
-        this.TypeCoffre = pTypeCoffre;
+    public void setIdCoffre(int pIdCoffre) {
+        this.idCoffre = pIdCoffre;
+    }
+
+    //Définit le type du coffre
+    public void setTypeCoffre(String pTypeCoffre) {
+        this.typeCoffre = pTypeCoffre;
     }
 
     //Définit la periode
-    public void setPeriode (String pPeriode)
-    {
-        this.Periode = pPeriode;
+    public void setPeriode(String pPeriode) {
+        this.periode = pPeriode;
     }
 
     //Définit le prix
-    public void setPrix(int pPrix)
-    {
-        this.Prix = pPrix;
+    public void setPrix(int pPrix) {
+        this.prix = pPrix;
     }
 
     //Définit le devise
-    public void setDevise(String pDevise)
-    {
-        this.Devise = pDevise;
+    public void setDevise(String pDevise) {
+        this.devise = pDevise;
     }
 
     //Définit le client du coffre
-    public void setClientCoffre(Client pClient)
-    {
-        this.Client = pClient;
+    public void setClientCoffre(int pClient) {
+        this.idClient = pClient;
     }
 
-
 }
+
