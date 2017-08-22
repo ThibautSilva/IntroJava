@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import java.util.Date;
-=======
-import java.time.Instant;
->>>>>>> 9d00441d2e4d7977867d4d4725ab7b83157afc07
 
 /**
  * Created by
@@ -18,8 +14,8 @@ public class Operation {
     // Type de devise : euro / dollar
     private String devise;
 
-    // Période de location : quizaine / mois / année
-    private String periodeLocation;
+    // Période de location : nombre de jours
+    private int periodeLocation;
 
     // Objet lié au coffre fort présent dans l'agence
     private Coffre coffre;
@@ -36,7 +32,7 @@ public class Operation {
     private Date createDate;
     private Date updateDate;
 
-    public Operation(String id, String devise, String periodeLocation, Coffre coffre, Double prixPeriode, Frais fraisDeGarde, Client client) {
+    public Operation(String id, String devise, int periodeLocation, Coffre coffre, Double prixPeriode, Frais fraisDeGarde, Client client) {
         this.id = id;
         this.devise = devise;
         this.periodeLocation = periodeLocation;
@@ -57,11 +53,11 @@ public class Operation {
         this.updateDate = new Date();
     }
 
-    public String getPeriodeLocation() {
+    public int getPeriodeLocation() {
         return periodeLocation;
     }
 
-    public void setPeriodeLocation(String periodeLocation) {
+    public void setPeriodeLocation(int periodeLocation) {
         this.periodeLocation = periodeLocation;
         this.updateDate = new Date();
     }
