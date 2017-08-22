@@ -32,6 +32,7 @@ class Frais {
 
     public double calculFrais(Coffre coffre) {
         //todo prix du coffre * nb jour
+        this.id = coffre.getIdCOffre();
         this.montant = coffre.getPrix() * coffre.getPeriode();
         return this.montant;
     }
