@@ -27,7 +27,8 @@ public class Main {
                         System.out.println("\n****************************************");
                         System.out.println("****** INFORMATIONS SUR LA BANQUE ******");
                         System.out.println("****************************************\n");
-                        //TODO prendre la liste correspondante et l'afficher avec une methode cree expres
+                        agenceLaxou.displayAgence();
+                        agenceBrabois.displayAgence();
                         break;
                     case 2:
                         System.out.println("\n**********************************");
@@ -53,6 +54,12 @@ public class Main {
                         System.out.println("****** FRAIS CORRESPONDANT ******");
                         System.out.println("*********************************\n");
                         //TODO prendre la liste correspondante et l'afficher avec la methode Frais.printFrais(Frais f)
+                        List<Coffre> listeCoffre1 = Coffre.getListeCoffre();
+                        for (Coffre coffre : listeCoffre1) {
+                            Frais frais = new Frais();
+                            frais.calculFrais(coffre);
+                            Frais.printFrais(frais);
+                        }
                         break;
                     case 0:
                         System.out.println("--- Fin du programme ---");
