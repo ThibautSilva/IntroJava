@@ -18,15 +18,7 @@ public class Client {
 		adresse = "3 rue de la paix";
 		numeroTel = "06 81 98 75 42";
 	}
-	/**
-	 * Main pour tester les connexion
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		Client client = new Client();
-		Connexion(user,pass);
-	}
-	
+		
 	/**
 	 * Mode qui permet la connexion 
 	 * @param user
