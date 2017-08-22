@@ -30,8 +30,14 @@ class Frais {
         this.montant = montant;
     }
 
-    public double calculFrais(Coffre coffre, Operation operation) {
+    public double calculFrais(Coffre coffre) {
         //todo prix du coffre * nb jour
-        return 1;
+        this.montant = coffre.getPrix() * coffre.getPeriode();
+        return this.montant;
+    }
+
+    public static void printFrais(Frais f) {
+        System.out.println("Identifiant : " + f.getId());
+        System.out.println("Montant : " + f.getMontant());
     }
 }

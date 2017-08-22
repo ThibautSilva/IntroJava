@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by
@@ -10,20 +12,13 @@ import java.util.Date;
 public class Operation {
 
     // ID propre à l'objet, unique en base
-    private String id;
-    // Type de devise : euro / dollar
-    private String devise;
-
-    // Période de location : nombre de jours
-    private int periodeLocation;
+    private int id;
 
     // Objet lié au coffre fort présent dans l'agence
     private Coffre coffre;
 
-    // Prix du coffre fort pour la période de location
-    private Double prixPeriode;
     // Frais engendré par la garde de l'agence, lors du transfert d'un élément du coffre
-    private Frais fraisDeGarde;
+    private float fraisDeGarde;
 
     // Client lié à l'opération
     private Client client;
@@ -32,40 +27,20 @@ public class Operation {
     private Date createDate;
     private Date updateDate;
 
-    public Operation(String id, String devise, int periodeLocation, Coffre coffre, Double prixPeriode, Frais fraisDeGarde, Client client) {
+    public Operation(int id, Coffre coffre, Client client) {
         this.id = id;
-        this.devise = devise;
-        this.periodeLocation = periodeLocation;
         this.coffre = coffre;
-        this.prixPeriode = prixPeriode;
-        this.fraisDeGarde = fraisDeGarde;
         this.client = client;
         this.createDate = new Date();
         this.updateDate = new Date();
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
-    }
-
-    public int getPeriodeLocation() {
-        return periodeLocation;
-    }
-
-    public void setPeriodeLocation(int periodeLocation) {
-        this.periodeLocation = periodeLocation;
-    }
-
-    public String getDevise() {
-        return devise;
-    }
-
-    public void setDevise(String devise) {
-        this.devise = devise;
     }
 
     public Coffre getCoffre() {
@@ -76,19 +51,11 @@ public class Operation {
         this.coffre = coffre;
     }
 
-    public Double getPrixPeriode() {
-        return prixPeriode;
-    }
-
-    public void setPrixPeriode(Double prixPeriode) {
-        this.prixPeriode = prixPeriode;
-    }
-
-    public Frais getFraisDeGarde() {
+    public float getFraisDeGarde() {
         return fraisDeGarde;
     }
 
-    public void setFraisDeGarde(Frais fraisDeGarde) {
+    public void setFraisDeGarde(float fraisDeGarde) {
         this.fraisDeGarde = fraisDeGarde;
     }
 
@@ -106,5 +73,23 @@ public class Operation {
 
     public Date getUpdateDate() {
         return updateDate;
+    }
+
+    protected static List<Operation> generateOperationsList() {
+        List<Operation> operationsList = new ArrayList<Operation>();
+
+        for (int i=0; i<Coffre.listeCoffre.size(); i++) {
+            Operation o = new Operation(i, Coffre.listeCoffre.get(i), new Client());
+            operationsList.add(o);
+        }
+
+        return operationsList;
+    }
+
+
+    protected static void printOperation(Operation o) {
+        System.out.println("Opération numéro " + o.getId());
+        CoffreFromXml.printCoffre(o.getCoffre());
+        Client.printClient(o.getClient());
     }
 }

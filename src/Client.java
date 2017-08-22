@@ -84,4 +84,11 @@ public class Client {
 	public void setNumeroTel(String numeroTel) {
 		this.numeroTel = numeroTel;
 	}
+
+	public static void printClient(Client c) {
+		System.out.println("Identifiant : " + c.getId());
+		System.out.println("Utilisateur : " + getUser());
+		System.out.println("Adresse : " + c.getAdresse() + c.getCodePostal());
+		System.out.println("Téléphone : " + c.getNumeroTel());
+	}
 }

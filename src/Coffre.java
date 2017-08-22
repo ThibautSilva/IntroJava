@@ -16,7 +16,6 @@ public class Coffre {
 
     // Constructeur
     public Coffre(int pIdCoffre, String pTypeCoffre, String pPeriode, double pPrix, String pDevise, int pClient) {
-
         idCoffre = pIdCoffre;
         typeCoffre = pTypeCoffre;
         periode = pPeriode;
@@ -37,9 +36,15 @@ public class Coffre {
         return typeCoffre;
     }
 
-    //Retourne la periode
-    public String getPeriode() {
-        return periode;
+    //Retourne la periode en nb de jours
+    public int getPeriode() {
+        if (periode.equals("mois")) {
+            return 30;
+        } else if (periode.equals("quinzaine")) {
+            return 15;
+        } else {
+            return 1;
+        }
     }
 
     // Retourne le prix

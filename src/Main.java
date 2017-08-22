@@ -8,14 +8,15 @@ public class Main {
     public static void main(String[] args) {
         boolean connect = Client.connexion();
         if (connect) {
-            //todo generate Agence
+            //generate Agence
             Centre centre = new Centre("Lorraine");
             Sucursale sucursale = new Sucursale(centre, "Nancy");
             Agence agenceLaxou = new Agence("Laxou", "55240", "Grand Nancy", sucursale);
             Agence agenceBrabois = new Agence("Brabois", "55230", "Grans Nancy", sucursale);
-            CoffreFromXml.main();
-            //todo generate coffre
-            //todo generate operation
+            //generate coffre
+            CoffreFromXml.generateCoffresList();
+            //generate operation
+            List<Operation> operationsList = Operation.generateOperationsList();
 
             int choix = 5;
             do {
@@ -23,37 +24,33 @@ public class Main {
 
                 switch (choix) {
                     case 1:
-                        //TODO Informations sur la banque
                         System.out.println("\n****************************************");
                         System.out.println("****** INFORMATIONS SUR LA BANQUE ******");
-                        System.out.println("****************************************");
+                        System.out.println("****************************************\n");
+                        //TODO prendre la liste correspondante et l'afficher avec une methode cree expres
                         break;
                     case 2:
-                        //TODO Liste des opérations
                         System.out.println("\n**********************************");
                         System.out.println("****** LISTE DES OPERATIONS ******");
-                        System.out.println("**********************************");
+                        System.out.println("**********************************\n");
+                        for (Operation op : operationsList) {
+                            Operation.printOperation(op);
+                        }
                         break;
                     case 3:
-                        //TODO Liste des coffres
                         System.out.println("\n*******************************");
                         System.out.println("****** LISTE DES COFFRES ******");
-                        System.out.println("*******************************");
+                        System.out.println("*******************************\n");
                         List<Coffre> listeCoffre = Coffre.getListeCoffre();
                         for (Coffre coffre : listeCoffre) {
-                            System.out.println("\n*************COFFRES************");
-                            System.out.println("Id coffre + Type : " + coffre.getIdCOffre() + " - " + coffre.getTypeCoffre());
-                            System.out.println("Devise : " +coffre.getDevise());
-                            System.out.println("Période : " +coffre.getPeriode());
-                            System.out.println("Prix : " +coffre.getPrix());
-                            System.out.println("");
+                            CoffreFromXml.printCoffre(coffre);
                         }
                         break;
                     case 4:
-                        //TODO Frais correspondant
                         System.out.println("\n*********************************");
                         System.out.println("****** FRAIS CORRESPONDANT ******");
-                        System.out.println("*********************************");
+                        System.out.println("*********************************\n");
+                        //TODO prendre la liste correspondante et l'afficher avec la methode Frais.printFrais(Frais f)
                         break;
                     case 0:
                         System.out.println("--- Fin du programme ---");

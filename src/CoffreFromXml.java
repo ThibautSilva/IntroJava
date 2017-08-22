@@ -4,21 +4,13 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.IOException;
 import java.util.Random;
 
 public class CoffreFromXml {
-
-    public static void main() {
-        Afficher_Logo();
-        Afficher_Liste_Coffre();
-    }
 
     private static void Afficher_Logo() {
         System.out.println(
@@ -32,7 +24,7 @@ public class CoffreFromXml {
                         "\n");
     }
 
-    private static void Afficher_Liste_Coffre() {
+    protected static void generateCoffresList() {
         // Récupération d'une instance de la classe "DocumentBuilderFactory"
         final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
@@ -81,5 +73,12 @@ public class CoffreFromXml {
         } catch (final Exception e) {
             e.printStackTrace();
         }
+    }
+
+    protected static void printCoffre(Coffre coffre) {
+        System.out.println("Id coffre + Type : " + coffre.getIdCOffre() + " - " + coffre.getTypeCoffre());
+        System.out.println("Devise : " +coffre.getDevise());
+        System.out.println("Période : " +coffre.getPeriode());
+        System.out.println("Prix : " +coffre.getPrix());
     }
 }
