@@ -48,4 +48,6 @@ public class Sucursale {
         agences.add(Agence);
     }
 
+    public Centre getCentre() { return centre;}
+
 }
