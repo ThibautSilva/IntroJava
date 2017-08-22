@@ -11,16 +11,18 @@ public class Coffre {
     private String periode;
     private double prix;
     private String devise;
+    private int idAgence;
     private int idClient;
 
 
     // Constructeur
-    public Coffre(int pIdCoffre, String pTypeCoffre, String pPeriode, double pPrix, String pDevise, int pClient) {
+    public Coffre(int pIdCoffre, String pTypeCoffre, String pPeriode, double pPrix, String pDevise, int pAgence, int pClient) {
         idCoffre = pIdCoffre;
         typeCoffre = pTypeCoffre;
         periode = pPeriode;
         prix = pPrix;
         devise = pDevise;
+        idAgence = pAgence;
         idClient = pClient;
     }
 
@@ -55,6 +57,12 @@ public class Coffre {
     // Retourne la devise
     public String getDevise() {
         return devise;
+    }
+
+    // Retourne l'agence associé au coffre
+    public int getAgence() {
+        return idAgence;
+
     }
 
     // Retourne le client associé au coffre
@@ -93,6 +101,11 @@ public class Coffre {
     //Définit le devise
     public void setDevise(String pDevise) {
         this.devise = pDevise;
+    }
+
+    //Définit l'agence du coffre
+    public void setAgenceCoffre(int pAgence) {
+        this.idAgence = pAgence;
     }
 
     //Définit le client du coffre

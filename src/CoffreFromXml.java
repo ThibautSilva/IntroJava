@@ -54,6 +54,7 @@ public class CoffreFromXml {
                     final Element PeriodeLocation = (Element) coffre.getElementsByTagName("PeriodeLocation").item(0);
                     final Element PrixPeriode = (Element) coffre.getElementsByTagName("PrixPeriode").item(0);
                     final Element Devise = (Element) coffre.getElementsByTagName("Devise").item(0);
+                    final Element IdAgence = (Element) coffre.getElementsByTagName("IdAgence").item(0);
                     final Element IdClient = (Element) coffre.getElementsByTagName("IdClient").item(0);
 
                     //Affichage des informations
@@ -61,12 +62,13 @@ public class CoffreFromXml {
                     System.out.println("Période de location : " + PeriodeLocation.getTextContent());
                     System.out.println("Prix de la période : " + PrixPeriode.getTextContent());
                     System.out.println("Devise : " + Devise.getTextContent());
+                    System.out.println("Agence : " + IdAgence.getTextContent());
                     System.out.println("Client : " + IdClient.getTextContent());*/
 
                     Random rand = new Random();
                     int nombreAleatoire = rand.nextInt(10);
 
-                    Coffre coffreObjet = new Coffre(nombreAleatoire, TypeCoffre.getTextContent(), PeriodeLocation.getTextContent(), Double.parseDouble(PrixPeriode.getTextContent()), Devise.getTextContent(), Integer.parseInt(IdClient.getTextContent()));
+                    Coffre coffreObjet = new Coffre(nombreAleatoire, TypeCoffre.getTextContent(), PeriodeLocation.getTextContent(), Double.parseDouble(PrixPeriode.getTextContent()), Devise.getTextContent(), Integer.parseInt(IdAgence.getTextContent()), Integer.parseInt(IdClient.getTextContent()));
                     Coffre.listeCoffre.add(coffreObjet);
                 }
             }

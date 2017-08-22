@@ -35,6 +35,7 @@ public class Main {
                         System.out.println("**********************************\n");
                         for (Operation op : operationsList) {
                             Operation.printOperation(op);
+                            System.out.println("---------------------------------");
                         }
                         break;
                     case 3:
@@ -44,6 +45,7 @@ public class Main {
                         List<Coffre> listeCoffre = Coffre.getListeCoffre();
                         for (Coffre coffre : listeCoffre) {
                             CoffreFromXml.printCoffre(coffre);
+                            System.out.println("---------------------------------");
                         }
                         break;
                     case 4:
