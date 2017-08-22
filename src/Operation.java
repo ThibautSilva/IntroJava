@@ -1,5 +1,3 @@
-package Modele;
-
 import java.time.Instant;
 
 /**
