@@ -1,3 +1,5 @@
+//Merkling Dimitri
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
@@ -71,7 +73,7 @@ public class CoffreFromXml {
                     Random rand = new Random();
                     int nombreAleatoire = rand.nextInt(10);
 
-                    //coffre coffreObjet = new coffre(nombreAleatoire, TypeCoffre, PeriodeLocation, PrixPeriode, Devise, nombreAleatoire);
+                    coffre coffreObjet = new coffre(nombreAleatoire, TypeCoffre, PeriodeLocation, PrixPeriode, Devise, nombreAleatoire);
                 }
             }
         } catch (final ParserConfigurationException e) {
