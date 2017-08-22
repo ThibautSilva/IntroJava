@@ -50,7 +50,7 @@ public class Agence {
         clients.add(c);
     }
     public void addCoffre(Coffre c){
-        clients.add(c);
+        coffres.add(c);
     }
 
 
