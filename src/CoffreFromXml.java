@@ -41,7 +41,7 @@ public class CoffreFromXml {
             final DocumentBuilder builder = factory.newDocumentBuilder();
 
             // Création d'un Document
-            final Document document = builder.parse(new File("Cataloguefrais2016.xml"));
+            final Document document = builder.parse(new File("src/Cataloguefrais2016.xml"));
 
             // Récupération de l'Element racine
             final Element racine = document.getDocumentElement();
