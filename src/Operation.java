@@ -100,19 +100,11 @@ public class Operation {
         this.client = client;
     }
 
-    public Instant getCreateDate() {
+    public Date getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Instant createDate) {
-        this.createDate = createDate;
-    }
-
-    public Instant getUpdateDate() {
+    public Date getUpdateDate() {
         return updateDate;
-    }
-
-    public void setUpdateDate(Instant updateDate) {
-        this.updateDate = updateDate;
     }
 }
