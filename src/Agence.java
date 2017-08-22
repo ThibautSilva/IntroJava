@@ -10,7 +10,10 @@ public class Agence {
     private List<Client> clients;
     private List<Coffre> coffres;
 
-    public Agence(Sucursale sucursale ){
+    public Agence(String nom, String codePostale, String ville, Sucursale sucursale ){
+        this.nom = nom;
+        this.codePostale = codePostale;
+        this.ville = ville;
         this.sucursale = sucursale;
     }
 
