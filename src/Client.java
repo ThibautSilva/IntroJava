@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Client {
 	
 	public int id;
-	public static String user;
-	public static String pass;
+	public static String user = "Toto";
+	public static String pass = "Tata";
 	public String adresse;
 	public String codePostal;
 	public String numeroTel;
@@ -13,25 +13,21 @@ public class Client {
 	 * Constructeur de client 
 	 */
 	public Client() {
-		user = "Toto";
-		pass = "Tata";
 		adresse = "3 rue de la paix";
 		numeroTel = "06 81 98 75 42";
 	}
 		
 	/**
-	 * Mode qui permet la connexion 
-	 * @param user
-	 * @param pass
+	 * Mode qui permet la connexion
 	 */
-	public static void Connexion(String user, String pass) {
+	public static boolean connexion() {
 		Scanner input = new Scanner(System.in);
 		boolean test = false;
 		
 		String username;
 	    String password;
-		
-	    while(test == false) {
+
+	    while(!test) {
 			System.out.println("login: ");
 			username = input.next();
 			
@@ -49,6 +45,7 @@ public class Client {
 				System.out.println("ERREUR RECOMMENCER");
 			}
 	    }
+	    return test;
 	}
 	
 	public int getId() {
