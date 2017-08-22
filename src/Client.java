@@ -39,7 +39,7 @@ public class Client {
 			password = input.next();
 			
 			if(username.equals(user) && password.equals(pass)) {
-				System.out.println(user + " est connecté");
+				System.out.println(user + " est connectÃ©");
 				
 				System.out.println("Bonjour "+ user);
 				
