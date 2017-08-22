@@ -27,7 +27,8 @@ public class Main {
                         System.out.println("\n****************************************");
                         System.out.println("****** INFORMATIONS SUR LA BANQUE ******");
                         System.out.println("****************************************\n");
-                        //TODO prendre la liste correspondante et l'afficher avec une methode cree expres
+                        agenceLaxou.displayAgence();
+                        agenceBrabois.displayAgence();
                         break;
                     case 2:
                         System.out.println("\n**********************************");
