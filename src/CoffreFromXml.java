@@ -1,4 +1,5 @@
 //Merkling Dimitri
+//Merkling Dimitri
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -62,17 +63,19 @@ public class CoffreFromXml {
                     final Element PeriodeLocation = (Element) coffre.getElementsByTagName("PeriodeLocation").item(0);
                     final Element PrixPeriode = (Element) coffre.getElementsByTagName("PrixPeriode").item(0);
                     final Element Devise = (Element) coffre.getElementsByTagName("Devise").item(0);
+                    final Element IdClient = (Element) coffre.getElementsByTagName("IdClient").item(0);
 
                     //Affichage des informations
                     System.out.println("Type de coffre : " + TypeCoffre.getTextContent());
                     System.out.println("Période de location : " + PeriodeLocation.getTextContent());
                     System.out.println("Prix de la période : " + PrixPeriode.getTextContent());
                     System.out.println("Devise : " + Devise.getTextContent());
+                    System.out.println("Client : " + IdClient.getTextContent());
 
                     Random rand = new Random();
                     int nombreAleatoire = rand.nextInt(10);
 
-                    Coffre coffreObjet = new Coffre(nombreAleatoire, TypeCoffre.getTextContent(), PeriodeLocation.getTextContent(), Double.parseDouble(PrixPeriode.getTextContent()), Devise.getTextContent(), nombreAleatoire);
+                    Coffre coffreObjet = new Coffre(nombreAleatoire, TypeCoffre.getTextContent(), PeriodeLocation.getTextContent(), Double.parseDouble(PrixPeriode.getTextContent()), Devise.getTextContent(), (int)IdClient.getTextContent());
                 }
             }
         } catch (final ParserConfigurationException e) {
