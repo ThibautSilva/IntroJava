@@ -31,7 +31,7 @@ public class Client {
 		String username;
 	    String password;
 		
-	    while(test == false) {
+	    while(!test) {
 			System.out.println("login: ");
 			username = input.next();
 			
