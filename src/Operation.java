@@ -1,6 +1,4 @@
-package Modele;
-
-import java.time.Instant;
+import java.util.Date;
 
 /**
  * Created by
@@ -31,8 +29,20 @@ public class Operation {
     private Client client;
 
     //Métas se référents à l'objet Operation
-    private Instant createDate;
-    private Instant updateDate;
+    private Date createDate;
+    private Date updateDate;
+
+    public Operation(String id, String devise, String periodeLocation, Coffre coffre, Double prixPeriode, Frais fraisDeGarde, Client client) {
+        this.id = id;
+        this.devise = devise;
+        this.periodeLocation = periodeLocation;
+        this.coffre = coffre;
+        this.prixPeriode = prixPeriode;
+        this.fraisDeGarde = fraisDeGarde;
+        this.client = client;
+        this.createDate = new Date();
+        this.updateDate = new Date();
+    }
 
     public String getId() {
         return id;
@@ -40,6 +50,7 @@ public class Operation {
 
     public void setId(String id) {
         this.id = id;
+        this.updateDate = new Date();
     }
 
     public String getPeriodeLocation() {
@@ -48,6 +59,7 @@ public class Operation {
 
     public void setPeriodeLocation(String periodeLocation) {
         this.periodeLocation = periodeLocation;
+        this.updateDate = new Date();
     }
 
     public String getDevise() {
@@ -56,6 +68,7 @@ public class Operation {
 
     public void setDevise(String devise) {
         this.devise = devise;
+        this.updateDate = new Date();
     }
 
     public Coffre getCoffre() {
@@ -64,6 +77,7 @@ public class Operation {
 
     public void setCoffre(Coffre coffre) {
         this.coffre = coffre;
+        this.updateDate = new Date();
     }
 
     public Double getPrixPeriode() {
@@ -72,6 +86,7 @@ public class Operation {
 
     public void setPrixPeriode(Double prixPeriode) {
         this.prixPeriode = prixPeriode;
+        this.updateDate = new Date();
     }
 
     public Frais getFraisDeGarde() {
@@ -80,6 +95,7 @@ public class Operation {
 
     public void setFraisDeGarde(Frais fraisDeGarde) {
         this.fraisDeGarde = fraisDeGarde;
+        this.updateDate = new Date();
     }
 
     public Client getClient() {
@@ -88,21 +104,15 @@ public class Operation {
 
     public void setClient(Client client) {
         this.client = client;
+        this.updateDate = new Date();
     }
 
-    public Instant getCreateDate() {
+    public Date getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Instant createDate) {
-        this.createDate = createDate;
-    }
-
-    public Instant getUpdateDate() {
+    public Date getUpdateDate() {
         return updateDate;
     }
 
-    public void setUpdateDate(Instant updateDate) {
-        this.updateDate = updateDate;
-    }
 }
