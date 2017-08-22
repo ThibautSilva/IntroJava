@@ -3,13 +3,13 @@ public class Coffre {
     private int idCoffre;
     private String typeCoffre;
     private String periode;
-    private int prix;
+    private double prix;
     private String devise;
     private int idClient;
 
 
     // Constructeur
-    public Coffre(int pIdCoffre, String pTypeCoffre, String pPeriode, int pPrix, String pDevise, int pClient) {
+    public Coffre(int pIdCoffre, String pTypeCoffre, String pPeriode, double pPrix, String pDevise, int pClient) {
         System.out.println("Création d'un coffre !");
         idCoffre = pIdCoffre;
         typeCoffre = pTypeCoffre;
@@ -37,7 +37,7 @@ public class Coffre {
     }
 
     // Retourne le prix
-    public int getPrix() {
+    public double getPrix() {
         return prix;
     }
 
@@ -70,7 +70,7 @@ public class Coffre {
     }
 
     //Définit le prix
-    public void setPrix(int pPrix) {
+    public void setPrix(double pPrix) {
         this.prix = pPrix;
     }
 

@@ -1,18 +1,17 @@
 //Merkling Dimitri
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Random;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
+import java.util.Random;
 
 public class CoffreFromXml {
 
@@ -73,7 +72,7 @@ public class CoffreFromXml {
                     Random rand = new Random();
                     int nombreAleatoire = rand.nextInt(10);
 
-                    coffre coffreObjet = new Coffre(nombreAleatoire, TypeCoffre, PeriodeLocation, PrixPeriode, Devise, nombreAleatoire);
+                    Coffre coffreObjet = new Coffre(nombreAleatoire, TypeCoffre.getTextContent(), PeriodeLocation.getTextContent(), Double.parseDouble(PrixPeriode.getTextContent()), Devise.getTextContent(), nombreAleatoire);
                 }
             }
         } catch (final ParserConfigurationException e) {

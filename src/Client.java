@@ -28,10 +28,10 @@ public class Client {
 	    String password;
 
 	    while(!test) {
-			System.out.println("login: ");
+			System.out.print("login: ");
 			username = input.next();
 			
-			System.out.println("password: ");
+			System.out.print("password: ");
 			password = input.next();
 			
 			if(username.equals(user) && password.equals(pass)) {
