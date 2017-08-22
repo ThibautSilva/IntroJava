@@ -1,17 +1,19 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     private static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         boolean connect = Client.connexion();
-        if(connect) {
+        if (connect) {
             //todo generate Agence
             Centre centre = new Centre("Lorraine");
             Sucursale sucursale = new Sucursale(centre, "Nancy");
-            Agence agenceLaxou = new Agence("Laxou","55240", "Grand Nancy", sucursale);
+            Agence agenceLaxou = new Agence("Laxou", "55240", "Grand Nancy", sucursale);
             Agence agenceBrabois = new Agence("Brabois", "55230", "Grans Nancy", sucursale);
+            CoffreFromXml.main();
             //todo generate coffre
             //todo generate operation
 
@@ -37,6 +39,15 @@ public class Main {
                         System.out.println("\n*******************************");
                         System.out.println("****** LISTE DES COFFRES ******");
                         System.out.println("*******************************");
+                        List<Coffre> listeCoffre = Coffre.getListeCoffre();
+                        for (Coffre coffre : listeCoffre) {
+                            System.out.println("\n*************COFFRES************");
+                            System.out.println("Id coffre + Type : " + coffre.getIdCOffre() + " - " + coffre.getTypeCoffre());
+                            System.out.println("Devise : " +coffre.getDevise());
+                            System.out.println("Période : " +coffre.getPeriode());
+                            System.out.println("Prix : " +coffre.getPrix());
+                            System.out.println("");
+                        }
                         break;
                     case 4:
                         //TODO Frais correspondant
@@ -50,7 +61,7 @@ public class Main {
                     default:
                         System.out.println("Choix inconnu. Réessayez.");
                 }
-            } while(choix!=0);
+            } while (choix != 0);
         }
     }
 
@@ -69,7 +80,7 @@ public class Main {
         do {
             afficherMenu();
             choix = sc.nextByte();
-        } while(choix < 0 && choix > 4);
+        } while (choix < 0 && choix > 4);
         return choix;
     }
 }

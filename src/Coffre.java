@@ -1,4 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Coffre {
+    public static List<Coffre> listeCoffre = new ArrayList();
+
 
     private int idCoffre;
     private String typeCoffre;
@@ -10,7 +15,7 @@ public class Coffre {
 
     // Constructeur
     public Coffre(int pIdCoffre, String pTypeCoffre, String pPeriode, double pPrix, String pDevise, int pClient) {
-        System.out.println("Création d'un coffre !");
+
         idCoffre = pIdCoffre;
         typeCoffre = pTypeCoffre;
         periode = pPeriode;
@@ -52,7 +57,12 @@ public class Coffre {
 
     }
 
-    //*************   SETTER   *************
+    public static List<Coffre> getListeCoffre() {
+        return listeCoffre;
+    }
+
+
+//*************   SETTER   *************
 
     //Définit le type du coffre
     public void setIdCoffre(int pIdCoffre) {
@@ -82,6 +92,10 @@ public class Coffre {
     //Définit le client du coffre
     public void setClientCoffre(int pClient) {
         this.idClient = pClient;
+    }
+
+    public static void setListeCoffre(List<Coffre> listeCoffre) {
+        Coffre.listeCoffre = listeCoffre;
     }
 
 }

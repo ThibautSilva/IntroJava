@@ -1,5 +1,4 @@
 //Merkling Dimitri
-//Merkling Dimitri
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -56,7 +55,7 @@ public class CoffreFromXml {
                     final Element coffre = (Element) racineNoeuds.item(i);
 
                     //Affichage d'une opération
-                    System.out.println("\n*************COFFRES************");
+                    //System.out.println("\n*************COFFRES************");
 
                     // Récupération des informations
                     final Element TypeCoffre = (Element) coffre.getElementsByTagName("TypeCoffre").item(0);
@@ -66,23 +65,20 @@ public class CoffreFromXml {
                     final Element IdClient = (Element) coffre.getElementsByTagName("IdClient").item(0);
 
                     //Affichage des informations
-                    System.out.println("Type de coffre : " + TypeCoffre.getTextContent());
+                    /*System.out.println("Type de coffre : " + TypeCoffre.getTextContent());
                     System.out.println("Période de location : " + PeriodeLocation.getTextContent());
                     System.out.println("Prix de la période : " + PrixPeriode.getTextContent());
                     System.out.println("Devise : " + Devise.getTextContent());
-                    System.out.println("Client : " + IdClient.getTextContent());
+                    System.out.println("Client : " + IdClient.getTextContent());*/
 
                     Random rand = new Random();
                     int nombreAleatoire = rand.nextInt(10);
 
-                    Coffre coffreObjet = new Coffre(nombreAleatoire, TypeCoffre.getTextContent(), PeriodeLocation.getTextContent(), Double.parseDouble(PrixPeriode.getTextContent()), Devise.getTextContent(), (int)IdClient.getTextContent());
+                    Coffre coffreObjet = new Coffre(nombreAleatoire, TypeCoffre.getTextContent(), PeriodeLocation.getTextContent(), Double.parseDouble(PrixPeriode.getTextContent()), Devise.getTextContent(), Integer.parseInt(IdClient.getTextContent()));
+                    Coffre.listeCoffre.add(coffreObjet);
                 }
             }
-        } catch (final ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (final SAXException e) {
-            e.printStackTrace();
-        } catch (final IOException e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         }
     }
